@@ -24,6 +24,13 @@
 - **vuetify_y_todo で作業する前に、Github リモートリポジトリ作成**
 - 作業工程を Github が監視しているので、作業前に設定しないと Warn が出やすくなるため
 - touch .gitignore で生成し、/node_modules/を記述(作成時に記述されていることもある)
+- git init, git add ., git commit -m "first commit"
+- リモートリポジトリを Github で作成し、URL を確認
+- git remote add origin https://github.com/lumijoe/vuetify_y_todo.git
+  git branch -M main
+  git push -u origin main で、ローカルリポジトリ、リモートリポジトリが連携される
+- Github の Settings の pages で Branch 設定で main が新規作成されているので、main で save し設定
+- Actions で走りを確認、エラーチェックなど、異常なければ次の作業へ
 
 - **vuetify の導入**
 - vue add vuetify で、vuetify をインストール
