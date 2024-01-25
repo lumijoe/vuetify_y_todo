@@ -49,7 +49,8 @@
     </v-app-bar>
 
     <v-main>
-      <!--  -->
+      <!-- vue-routerを使用する場合 -->
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
