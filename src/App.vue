@@ -9,11 +9,13 @@
     >
       <v-list-item>
         <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Application
+          <!-- ナビ：メインタイトル -->
+          <v-list-item-title class="text-h6 title">
+            {{ mainTitle }}
           </v-list-item-title>
+          <!-- ナビ：サブタイトル -->
           <v-list-item-subtitle>
-            subtext
+            Let's Do This !
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -31,7 +33,7 @@
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+          </v-list-item-icon> 
 
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
@@ -43,7 +45,7 @@
     <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Application</v-toolbar-title>
+      <v-toolbar-title>{{ mainTitle }}</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
@@ -56,9 +58,9 @@
   export default {
     data: () => ({ 
       drawer: null,
+      mainTitle: 'Vuetify Todo',
       items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-          { title: 'Photos', icon: 'mdi-image' },
+          { title: 'Todo', icon: 'mdi-view-dashboard' },
           { title: 'About', icon: 'mdi-help-box' },
         ],
     }),

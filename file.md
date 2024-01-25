@@ -16,4 +16,6 @@
   - items の not defined エラーを解消するべく定義するには
   - items を script の data 内で定義するため
   - vuer<>コードの script、items の配列部分をコピーhttps://v2.vuetifyjs.com/en/components/navigation-drawers/#usage
-  -
+  - ナビ items, title, subtitle のテキストを編集
+- **src/router/index.js**
+  - ナビカテゴリのリンク先を編集
