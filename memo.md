@@ -34,3 +34,8 @@
 
 - **vuetify の導入**
 - vue add vuetify で、vuetify をインストール
+- ここで問題があれば、github との連携を先に済ませる
+- choose a preset は recommended を選択
+- successfully が表示されたら package.json ファイルをチェック
+- package.json の dependencies の vuetify と、script の serve と build を確認する
+- serve で走らせる、、、
