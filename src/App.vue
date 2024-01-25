@@ -29,6 +29,7 @@
         <v-list-item
           v-for="item in items"
           :key="item.title"
+          :to="item.to"
           link
         >
           <v-list-item-icon>
@@ -61,8 +62,8 @@
       drawer: null,
       mainTitle: 'Vuetify Todo',
       items: [
-          { title: 'Todo', icon: 'mdi-view-dashboard' },
-          { title: 'About', icon: 'mdi-help-box' },
+          { title: 'Todo', icon: 'mdi-view-dashboard', to: '/' },
+          { title: 'About', icon: 'mdi-help-box', to: '/about'  },
         ],
     }),
   }
