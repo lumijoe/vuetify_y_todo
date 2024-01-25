@@ -34,7 +34,7 @@
   - ファイル内 script タグの items の配列内に to を追加することで遷移が可能になる。to: '/about'など他も記述
   - 遷移を可能にするために、v-list-item にまだ設定する
   - v-list-item v-for の部分の:key の下に:to を追加する
-- **src/App.vue(アイコン編集)**
+- **src/App.vue(アイコン編集 Todo)**
   - ui/icons https://v2.vuetifyjs.com/en/components/icons/
   - のテキスト部分 MaterialDesignIcons をクリック
     https://pictogrammers.com/library/mdi/
@@ -42,3 +42,15 @@
     - 検索窓に todo 入力で相応しいアイコンを検索(または list checks で出てくる)
     - アイコンの名前を確認　 format-list-checks なので
     - ファイル script 内 items 配列の todo の icon 部分を icon: 'mdi-format-list-checks'に変更する
+
+## 3：各ページの詳細設定
+
+- **views/AboutView.vue(テキスト編集)**
+  - まず適当に h3 と p タグ lorem で余白をチェックする
+  - styles~/spacing で余白の表記方法を確認 https://v2.vuetifyjs.com/en/styles/spacing/
+  - 先頭の div class="about"に pa-6 を追加
+- **views/HomeView.vue(ファイル名変更)**
+  - これを TodoView.vue に変更すると、一時的にファイルがエラーになるので
+- **src/router/index.js(Home 系を Todo 系に変更)**
+  - import HomeView〜../views/HomeView~の HomeView 部分を TodoView に変更
+  - const routes の配列定義内の path:'/'の name:'home'から name：'todo'へ,component: HomeView から component: TodoView へ変更
