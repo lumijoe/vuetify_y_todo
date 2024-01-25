@@ -77,3 +77,10 @@
   - v-app-bar-title を、{{ mainTitle }}に変更
   - navicon をクリックした時の event 処理を設定するため
   - v-app-bar-nav-icon タグに@click="drawer = !drawer"を追記
+
+## 6:Todo ページのコンテンツ編集
+
+- **src/views/TodoView.vue(中身を編集)**
+  - ui/lists でチェックボックス仕様を確認　https://v2.vuetifyjs.com/en/components/lists/#subheadings-and-dividers
+  - サイト script タグの v-divider の次の v-list タグを含む部分をコピー
+  - ファイルの h1 タグ Todo Page をペーストで上書き
