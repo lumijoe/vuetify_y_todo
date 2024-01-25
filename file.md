@@ -34,4 +34,11 @@
   - ファイル内 script タグの items の配列内に to を追加することで遷移が可能になる。to: '/about'など他も記述
   - 遷移を可能にするために、v-list-item にまだ設定する
   - v-list-item v-for の部分の:key の下に:to を追加する
-    \*\*src/App.vue(アイコン編集)
+- **src/App.vue(アイコン編集)**
+  - ui/icons https://v2.vuetifyjs.com/en/components/icons/
+  - のテキスト部分 MaterialDesignIcons をクリック
+    https://pictogrammers.com/library/mdi/
+  - まず、Todo 用のアイコン
+    - 検索窓に todo 入力で相応しいアイコンを検索(または list checks で出てくる)
+    - アイコンの名前を確認　 format-list-checks なので
+    - ファイル script 内 items 配列の todo の icon 部分を icon: 'mdi-format-list-checks'に変更する
