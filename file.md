@@ -11,5 +11,9 @@
 - <>マークより一部(v-card タグの中身だけ)をコピー
 - **src/App.vue**
   - 途中 v-navigation-drawer タグにペースト修正する
-  - 修正タグの permanent を削除
-  - v-navigation-drawer の後ろに、v-model="drawer" app を追加
+  - ペーストのタグ内の permanent を削除
+  - v-navigation-drawer の後ろに、v-model="drawer" app を追加(ナビゲーションが表示非表示される)
+  - items の not defined エラーを解消するべく定義するには
+  - items を script の data 内で定義するため
+  - vuer<>コードの script、items の配列部分をコピーhttps://v2.vuetifyjs.com/en/components/navigation-drawers/#usage
+  -
