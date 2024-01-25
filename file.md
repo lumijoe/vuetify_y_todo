@@ -5,7 +5,7 @@
 - ソースコードを取得、コピー
 - **src/App.vue**にペースト、動作確認
 
-## 2:ナビゲーションメニューの設定
+## 2:左ナビゲーションメニューの設定
 
 - https://v2.vuetifyjs.com/en/components/navigation-drawers/#usage
 - <>マークより一部(v-card タグの中身だけ)をコピー
@@ -55,8 +55,18 @@
   - import HomeView〜../views/HomeView~の HomeView 部分を TodoView に変更
   - const routes の配列定義内の path:'/'の name:'home'から name：'todo'へ,component: HomeView から component: TodoView へ変更
 
-## 4:使用しない components/HelloWorld.vue を削除してもいい(今回はコメントアウトとファイル温存で一旦対応)
+## 4:使用しないファイルの削除 components/HelloWorld.vue は削除可能(今回はコメントアウトとファイル温存で一旦対応)
 
 - src/components ディレクトリごと削除 OK
 - 読み込んでいる部分の削除も OK
   - TodoView.vue 内の template 内、script のヘッダー内と export 内の３箇所
+
+## 5:中央ナビゲーションメニューパネルの編集
+
+- **src/App.vue(v-app-bar タグ)**
+  - https://v2.vuetifyjs.com/en/components/app-bars/
+  - bar 選択肢から Images を選択 https://v2.vuetifyjs.com/en/components/app-bars/#images
+  - サイト script の<>から v-app-bar タグを含んでコピー
+  - ファイルの v-app-bar 部分をペーストで上書き
+  - **直下の absolute を削除して app を記述して上書き**すると、bar で隠れていた app コンテンツのトップが下がって表示されるようになる(bar の margin buttom の設定は必要ない)
+  -

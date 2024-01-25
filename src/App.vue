@@ -3,6 +3,7 @@
 
 <template>
   <v-app id="inspire">
+    <!-- nav:drawer左パネル -->
     <v-navigation-drawer
       v-model="drawer"
       app 
@@ -43,10 +44,44 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app>
+    <!-- nav:app bar -->
+    <!-- <v-app-bar app>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title>{{ mainTitle }}</v-toolbar-title>
+    </v-app-bar> -->
+    <v-app-bar
+      app
+      color="#fcb69f"
+      dark
+      shrink-on-scroll
+      src="https://picsum.photos/1920/1080?random"
+      scroll-target="#scrolling-techniques-2"
+    >
+      <template v-slot:img="{ props }">
+        <v-img
+          v-bind="props"
+          gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+        ></v-img>
+      </template>
+
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+      <v-app-bar-title>Title</v-app-bar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-dots-vertical</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-main>
