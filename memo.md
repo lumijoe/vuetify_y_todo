@@ -38,4 +38,9 @@
 - choose a preset は recommended を選択
 - successfully が表示されたら package.json ファイルをチェック
 - package.json の dependencies の vuetify と、script の serve と build を確認する
-- serve で走らせる、、、
+- 起動コマンドの確認　 npm run serve
+
+## 起動
+
+- npm run serve で起動
+- localhost でブラウザ表示確認できれば起動成功
