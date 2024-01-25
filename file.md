@@ -74,3 +74,6 @@
   - src の下に prominent を追加記述
   - color="#fcb69f"を、color="primary"に上書き
   - src の画像を sea.jpg に変更　（変更前はhttps://picsum.photos/1920/1080?random）
+  - v-app-bar-title を、{{ mainTitle }}に変更
+  - navicon をクリックした時の event 処理を設定するため
+  - v-app-bar-nav-icon タグに@click="drawer = !drawer"を追記

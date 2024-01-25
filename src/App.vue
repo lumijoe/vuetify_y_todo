@@ -65,9 +65,9 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
+      <v-app-bar-title>{{ mainTitle }}</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
