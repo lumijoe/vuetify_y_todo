@@ -45,12 +45,18 @@
 
 ## 3：各ページの詳細設定
 
-- **views/AboutView.vue(テキスト編集)**
+- **views/AboutView.vue(About ページ：テキスト編集)**
   - まず適当に h3 と p タグ lorem で余白をチェックする
   - styles~/spacing で余白の表記方法を確認 https://v2.vuetifyjs.com/en/styles/spacing/
   - 先頭の div class="about"に pa-6 を追加
-- **views/HomeView.vue(ファイル名変更)**
+- **views/HomeView.vue(Todo ページ：ファイル名変更)**
   - これを TodoView.vue に変更すると、一時的にファイルがエラーになるので
-- **src/router/index.js(Home 系を Todo 系に変更)**
+- **src/router/index.js(Todo ページ：Home 系を Todo 系に変更)**
   - import HomeView〜../views/HomeView~の HomeView 部分を TodoView に変更
   - const routes の配列定義内の path:'/'の name:'home'から name：'todo'へ,component: HomeView から component: TodoView へ変更
+
+## 4:使用しない components/HelloWorld.vue を削除してもいい(今回はコメントアウトとファイル温存で一旦対応)
+
+- src/components ディレクトリごと削除 OK
+- 読み込んでいる部分の削除も OK
+  - TodoView.vue 内の template 内、script のヘッダー内と export 内の３箇所
