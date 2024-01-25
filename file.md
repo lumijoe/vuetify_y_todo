@@ -69,4 +69,8 @@
   - サイト script の<>から v-app-bar タグを含んでコピー
   - ファイルの v-app-bar 部分をペーストで上書き
   - **直下の absolute を削除して app を記述して上書き**すると、bar で隠れていた app コンテンツのトップが下がって表示されるようになる(bar の margin buttom の設定は必要ない)
-  -
+  - shrink-on-scroll,scroll-target="#scrolling-techniques-2" は削除
+  - props で prominet を確認　https://v2.vuetifyjs.com/en/api/v-app-bar/#props
+  - src の下に prominent を追加記述
+  - color="#fcb69f"を、color="primary"に上書き
+  - src の画像を sea.jpg に変更　（変更前はhttps://picsum.photos/1920/1080?random）
