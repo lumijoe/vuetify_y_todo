@@ -1,0 +1,29 @@
+## 開発環境---Vue は CLI で。vuetify で create 　 app する。
+
+- **desktop で**
+- node --version、node.js がインストールされているか Version を確認
+- touch memo.md、手順を記述するためのファイルを作成
+- node v16.20.2 がインストール済み
+- npm install -g @vue/cli、vue を CLI で開発するためローカルにインストールする
+  - ERR! code EACCES が出たら管理者権限で再インストールが必要　 sudo npm install -g @vue/cli で実行
+  - password はローカル PC 起動時のもの
+  - 脆弱性が発見されたら vunlnerabilities が 0 でなければ
+    - npm audit fix --force で、セキュリティ情報の詳細を確認と自動修正をさせる
+    - それでも ERR!が出れば npm install で package-lock.json を自動生成してから npm audit fix --force を実行
+    - found 0 vulnerabilities になれば OK
+- vuetify ページ参考　https://vuetifyjs.com/en/で、vue create でディレクトリを生成する
+- vue create アプリ名をターミナルで実行し、カスタムでセットアップをしていく
+  - 最初は Manually select features を選択
+  - radio ボタンで Babel, Router, Vuex, CSS Pre-processors を選択する（Linter / Formatter は選択外にする）
+  - Vue.js version をここで 2.x を選択
+  - history mode for router は No なので n を入力
+  - CSS pre-processor は Sass/SCSS(with dart-sass)を選択
+  - config は　 In dedicated config files を選択
+  - preset for future projects は No なので、n を入力
+- success で生成できたら cd でディレクトリに移動
+- **vuetify_y_todo で作業する前に、Github リモートリポジトリ作成**
+- 作業工程を Github が監視しているので、作業前に設定しないと Warn が出やすくなるため
+- touch .gitignore で生成し、/node_modules/を記述(作成時に記述されていることもある)
+
+- **vuetify の導入**
+- vue add vuetify で、vuetify をインストール
