@@ -97,4 +97,4 @@
   - 一旦記入していたリストの直書きテキスト v-list-item-title を tasks から読み込ませるための書き換え：{{ task.title }}で上書きする
 - **src/views/TodoView.vue(リストの UI カスタム編集)**
   - ui/dividers でシンプルなディバイダーを確認し<>コピー　https://v2.vuetifyjs.com/en/components/dividers/#usage
-- v-list-item のさらに親 div を追加するので v-list-item タグの v-for や key 属性は div につけるようにする
+- v-list-item が for で繰り返される前に(item の後ろにディバイダーを表示して for で繰り返す)を描画するために item を括る親 div を追加し、div の中で item+ディバイダーを繰り返す構造を作る。v-list-item タグから v-for や key 属性は削除して div に付け替える。
