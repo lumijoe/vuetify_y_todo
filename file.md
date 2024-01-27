@@ -125,3 +125,6 @@
     https://pictogrammers.com/library/mdi/
   - 検索バーで delete を入力し、アイコン名 delete を選択
   - ファイル v-icon タグにデフォルトで入っている mdi-information を、mdi-delete に上書きする
+  - icon のカラーを指定：v-icon color="gray..."gray を primary などに変更
+  - icon をクリックした時の処理：v-btn タグに@click.stop を追加して
+  - exportdefault の methods に deleteTask(id) {this.tasks = this.tasks.filter(task => task.id !== id)} を追加する
