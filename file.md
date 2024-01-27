@@ -109,3 +109,8 @@
   - チェックボックスを定義：v-checkbox の:input-value="task.done"と上書きし、task.done の値が入るようにする。
   - task.done が完了だと定義するために、クリックされたら doneTask を実行することを methods で定義するため
   - methods: {doneTask(id){~}}で完了状態を切り替えるコードを追加する
+- **src/view/TodoView.vue(リスト task.done の場合の UI カスタム編集)**
+  - doneTask したリストの背景色だけを変更する styles~/colors で確認https://v2.vuetifyjs.com/en/styles/colors/
+  - v-list-item タグの@click="doneTask..."の次に:class="{ 'blue' : task.done }"を記述。カラーは参考まで。
+  - 加えて doneTask のテキスト(title に対して)も削除線描画に変更する　 styles~/text and~でで decoration(line-thirough text)を確認https://v2.vuetifyjs.com/en/styles/text-and-typography/#decoration
+  - v-item-title タグに:class="{ 'text-decoration-line-through' : task.done }"を記述(task.done に対してクラスを当てる指示)
