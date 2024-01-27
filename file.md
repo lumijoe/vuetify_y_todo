@@ -151,4 +151,7 @@
   - export default の return の tasks 配列の手前に：newTaskTitle: 'hello',を一旦入力し、確認できれば''だけにする
   - 新規追加テキストを入力したらボタンをクリックして、それを newTaskTitle に反映させる処理をするには、v-text-field API の event の click:append を確認するhttps://v2.vuetifyjs.com/en/api/v-text-field/#events-click:append
   - ファイルの v-text-field に@click:append="addTask"を追記して
-  - export default の methods:のトップに addTask を追加し console.log('addTask')で一旦確認する。
+  - export default の methods:のトップに addTask を追加させる console.log('addTask')で一旦確認
+  - v-text-field タグ内の@click の下に@keyup.enter="addTask"を追加し、クリックしたら addTask のイベントを処理する指示を emthods で記述するため
+  - export default の methods の addTask() {}の console.log 部分を let newTask = {id: Date.now(),title: this.newTaskTitle,done: false}this.tasks.push(newTask)に上書きし、tasks 配列と同じ項目にする
+  - 入力してリストが追加されると同時に入力フォームに入力したテキストが残っているものを自動でクリアするために、this.newTaskTitle = ''を追加する

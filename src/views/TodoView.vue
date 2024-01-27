@@ -3,6 +3,7 @@
     <v-text-field
       v-model="newTaskTitle"
       @click:append="addTask"
+      @keyup.enter="addTask"
       class="pa-3"
       outlined
       label="Add Task"
@@ -105,7 +106,14 @@
     },
     methods: {
       addTask() {
-        console.log('addTask');
+        // console.log('addTask');
+        let newTask = {
+          id: Date.now(),
+          title: this.newTaskTitle,
+          done: false
+        }
+        this.tasks.push(newTask)
+        this.newTaskTitle = ''
       },
       doneTask(id) {
         // console.log('id: ', id)
