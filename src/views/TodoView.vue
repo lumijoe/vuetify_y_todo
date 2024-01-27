@@ -1,11 +1,16 @@
 <template>
   <div class="home">
     <v-text-field
+      v-model="newTaskTitle"
+      @click:append="addTask"
       class="pa-3"
       outlined
       label="Add Task"
       append-icon="mdi-plus"
       hide-details
+      clearable
+
+
     ></v-text-field>
 
     <v-list
@@ -78,6 +83,7 @@
     name: 'Home',
     data() {
       return {
+        newTaskTitle: '',
         tasks: [
           {
             id: 1,
@@ -98,6 +104,9 @@
       }
     },
     methods: {
+      addTask() {
+        console.log('addTask');
+      },
       doneTask(id) {
         // console.log('id: ', id)
         let task = this.tasks.filter(task => task.id === id)[0]

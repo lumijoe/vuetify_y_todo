@@ -128,7 +128,7 @@
   - icon のカラーを指定：v-icon color="gray..."gray を primary などに変更
   - icon をクリックした時の処理：v-btn タグに@click.stop を追加して
   - exportdefault の methods に deleteTask(id) {this.tasks = this.tasks.filter(task => task.id !== id)} を追加する
-- **src/view/TodoView.vue(リストの新規追加機能を追加)**
+- **src/view/TodoView.vue(リストの新規追加機能:UI の構築)**
   - フォームの確認 ui/form inputs~ でテキスト入力と追加ボタンのアイコンが配置できるものを確認　https://v2.vuetifyjs.com/en/components/text-fields/#icons
   - <>で、下から２番目の右シンプルなデザイン v-text-field タグ　 outlined 　 label="Append"　 append-icon="mdi-map-marker"を選択してコピー
   - v-list の上部に表示させたいので、ファイルの v-list の手前に配置
@@ -145,3 +145,10 @@
   - text-fields-api をクリックhttps://v2.vuetifyjs.com/en/api/v-text-field/#links
   - props の下の方の hide-details 　を確認https://v2.vuetifyjs.com/en/api/v-text-field/#props-hide-details
   - ファイルの v-text-field タグの icon の下に hide-details だけ追加すると details が非表示になり余分なスペースが削除される
+- **src/view/TodoView.vue(リストの新規追加機能：処理の構築)**
+  - 入力した文字をクリアにできる機能：v-text-field タグ に clearable を追加　https://v2.vuetifyjs.com/en/api/v-text-field/#props-clearable
+  - 入力した文字を新規タイトルとして反映させる：v-text-field タグに v-model="newTaskTitle"を追加し、
+  - export default の return の tasks 配列の手前に：newTaskTitle: 'hello',を一旦入力し、確認できれば''だけにする
+  - 新規追加テキストを入力したらボタンをクリックして、それを newTaskTitle に反映させる処理をするには、v-text-field API の event の click:append を確認するhttps://v2.vuetifyjs.com/en/api/v-text-field/#events-click:append
+  - ファイルの v-text-field に@click:append="addTask"を追記して
+  - export default の methods:のトップに addTask を追加し console.log('addTask')で一旦確認する。
