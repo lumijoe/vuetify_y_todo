@@ -80,7 +80,9 @@
 
 ## 6:Todo ページのコンテンツ編集
 
-- **src/views/TodoView.vue(中身を編集)**
+- **src/views/TodoView.vue(view を編集)**
   - ui/lists でチェックボックス仕様を確認　https://v2.vuetifyjs.com/en/components/lists/#subheadings-and-dividers
   - サイト script タグの v-divider の次の v-list タグを含む部分をコピー
   - ファイルの h1 タグ Todo Page をペーストで上書き
+- **src/views/TodoView.vue(機能を編集)**
+  - 複数選択可能なリスト上部に位置する<v-list-item-group v-model="settings" multiple>を削除して複数選択不可にする。閉じタグも削除
