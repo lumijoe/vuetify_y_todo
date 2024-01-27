@@ -10,11 +10,10 @@
       append-icon="mdi-plus"
       hide-details
       clearable
-
-
     ></v-text-field>
 
     <v-list
+      v-if="tasks.length"
       class="pt-0"
       flat
     >
@@ -73,6 +72,12 @@
         
       <!-- </v-list-item-group> -->
     </v-list>
+    <div
+      v-else
+    >
+      No tasks
+
+    </div>
   </div>
   <!-- <hello-world /> -->
 </template>
@@ -86,21 +91,21 @@
       return {
         newTaskTitle: '',
         tasks: [
-          {
-            id: 1,
-            title: '銀行記帳' ,
-            done: false
-          },
-          {
-            id: 2,
-            title: '計算' ,
-            done: false
-          },
-          {
-            id: 3,
-            title: 'アプリ入力' ,
-            done: false
-          },
+          // {
+          //   id: 1,
+          //   title: '銀行記帳' ,
+          //   done: false
+          // },
+          // {
+          //   id: 2,
+          //   title: '計算' ,
+          //   done: false
+          // },
+          // {
+          //   id: 3,
+          //   title: 'アプリ入力' ,
+          //   done: false
+          // }
         ]
       }
     },

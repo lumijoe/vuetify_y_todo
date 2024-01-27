@@ -155,3 +155,7 @@
   - v-text-field タグ内の@click の下に@keyup.enter="addTask"を追加し、クリックしたら addTask のイベントを処理する指示を emthods で記述するため
   - export default の methods の addTask() {}の console.log 部分を let newTask = {id: Date.now(),title: this.newTaskTitle,done: false}this.tasks.push(newTask)に上書きし、tasks 配列と同じ項目にする
   - 入力してリストが追加されると同時に入力フォームに入力したテキストが残っているものを自動でクリアするために、this.newTaskTitle = ''を追加する
+- **src/view/TodoView.vue(新規追加から配列に入れ込む処理へと変更する)**
+  - 一旦入力しているデフォルトテキストである tasks 配列の中身は、一例なのでユーザーが欲しい情報だけをリストに表示するために、デフォルトテキストを一旦コメントアウトする。tasks:[//]中身をコメントアウト
+  - リストがクリアな状態で新規追加入力をしても、保存はされないことを確認、リロードしたら情報が保存されていないことがわかる。保存するために
+  - v-list タグに v-if="tasks.length"を追加し配列があればを定義し、そのタグの次のタグとして div タグを配置、その div タグに v-else で No tasks と表示されるようにテキストを追加
