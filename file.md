@@ -95,3 +95,6 @@
   - それを呼び出して描画させるために template の親要素である v-list-item タグ内に v-for を配置
   - 複数ある task を id で間違いなく指定する:key="task.id" を配置
   - 一旦記入していたリストの直書きテキスト v-list-item-title を tasks から読み込ませるための書き換え：{{ task.title }}で上書きする
+- **src/views/TodoView.vue(リストの UI カスタム編集)**
+  - ui/dividers でシンプルなディバイダーを確認し<>コピー　https://v2.vuetifyjs.com/en/components/dividers/#usage
+- v-list-item のさらに親 div を追加するので v-list-item タグの v-for や key 属性は div につけるようにする

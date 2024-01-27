@@ -9,9 +9,14 @@
         v-model="settings"
         multiple
       > -->
-        <v-list-item
+      <div
+        v-for="task in tasks"
+        :key="task.id"
+      >
+      <!-- <v-list-item
           v-for="task in tasks"
-          :key="task.id">
+          :key="task.id"> -->
+        <v-list-item>
           <template v-slot:default="{ active, }">
             <v-list-item-action>
               <v-checkbox
@@ -26,6 +31,7 @@
             </v-list-item-content>
           </template>
         </v-list-item>
+      </div>
 
         
       <!-- </v-list-item-group> -->
