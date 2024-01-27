@@ -97,4 +97,15 @@
   - 一旦記入していたリストの直書きテキスト v-list-item-title を tasks から読み込ませるための書き換え：{{ task.title }}で上書きする
 - **src/views/TodoView.vue(リストの UI カスタム編集)**
   - ui/dividers でシンプルなディバイダーを確認し<>コピー　https://v2.vuetifyjs.com/en/components/dividers/#usage
-- v-list-item が for で繰り返される前に(item の後ろにディバイダーを表示して for で繰り返す)を描画するために item を括る親 div を追加し、div の中で item+ディバイダーを繰り返す構造を作る。v-list-item タグから v-for や key 属性は削除して div に付け替える。
+  - v-list-item が for で繰り返される前に(item の後ろにディバイダーを表示して for で繰り返す)を描画するために item を括る親 div を追加し、div の中で item+ディバイダーを繰り返す構造を作る。v-list-item タグから v-for や key 属性は削除して div に付け替える。
+  - list の先頭の padding-top だけ余白があり、テキストが中央値に来ていないので v-list タグで pt-０を追加
+- **scr/view/TodoView.vue(チェックボックスのカスタム機能)**
+  - export default の tasks 配列に done の場合を追加する：done: false にして、実験的に 1 つは true にしてリロードされてもチェックが入ったままかを確認する
+  - template タグの v-slot:default の active を削除し
+  - 実験的に記述した done: true 部分を done: false にしてリロードしたらチェックが外れるかを確認：これをクリックで制御するようにするために
+  - v-list-item に@click="task.id"を記述する。key である id がクリックされたら、こうする、を methods で処理するために
+  - export default の data,の下に methods を追加
+  - id が読み込まれているかを console.log で確認するために一旦記述し、確認できたら削除する
+  - チェックボックスを定義：v-checkbox の:input-value="task.done"と上書きし、task.done の値が入るようにする。
+  - task.done が完了だと定義するために、クリックされたら doneTask を実行することを methods で定義するため
+  - methods: {doneTask(id){~}}で完了状態を切り替えるコードを追加する
