@@ -40,6 +40,9 @@
 - package.json の dependencies の vuetify と、script の serve と build を確認する
 - 起動コマンドの確認　 npm run serve
 
+- **MaterialDesignIcons の導入**
+- https://pictogrammers.com/library/mdi/
+
 - **拡張機能：VS Sequential Number(数字の自動入力)の導入**
 - 入力したい行を複数選択：option+行をクリック
 - cmd+shift+p：コマンドパレットを開く
@@ -47,13 +50,13 @@
 - Enter で自動入力される
 
 - **拡張機能：Vetur(ディレクティブ推奨メッセージ)の導入**
--
+- するも、他の volar や githubservice 推奨も試すが npm audit がうまくいかず一旦全て導入見送る
 
 ## 起動
 
 - npm run serve で起動
 - localhost でブラウザ表示確認できれば起動成功
 
-## 0125
+## 0127
 
-16：51/38:54
+27:58/38:54

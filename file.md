@@ -109,8 +109,19 @@
   - チェックボックスを定義：v-checkbox の:input-value="task.done"と上書きし、task.done の値が入るようにする。
   - task.done が完了だと定義するために、クリックされたら doneTask を実行することを methods で定義するため
   - methods: {doneTask(id){~}}で完了状態を切り替えるコードを追加する
-- **src/view/TodoView.vue(リスト task.done の場合の UI カスタム編集)**
+- **src/view/TodoView.vue(リスト task.done や more UI カスタム編集)**
   - doneTask したリストの背景色だけを変更する styles~/colors で確認https://v2.vuetifyjs.com/en/styles/colors/
   - v-list-item タグの@click="doneTask..."の次に:class="{ 'blue' : task.done }"を記述。カラーは参考まで。
   - 加えて doneTask のテキスト(title に対して)も削除線描画に変更する　 styles~/text and~でで decoration(line-thirough text)を確認https://v2.vuetifyjs.com/en/styles/text-and-typography/#decoration
-  - v-item-title タグに:class="{ 'text-decoration-line-through' : task.done }"を記述(task.done に対してクラスを当てる指示)
+  - v-item-title タグに:class="{ 'text-decoration-line-through' : task.done }"を記述(task.done に対してのみクラスを当て削除線を表示させる)
+- **src/view/TodoView.vue(リストそのものを表示から削除する機能の追加)**
+  - リストの右側にゴミ箱アイコンを表示し、それをクリックするとリストそのものが表示から削除される機能を追加するため
+  - リスト右側にアイコンを配置させるコードを確認 ui/lists https://v2.vuetifyjs.com/en/components/lists/#two-lines-and-subheader
+  - <>の v-list-item-action タグをコピーして一旦 information のアイコンを記述する位置として
+  - /template タグの手前にペーストして配置
+  - アイコンを削除イメージのゴミ箱アイコンに変更するため
+  - ui/icons https://v2.vuetifyjs.com/en/components/icons/
+  - のテキスト部分 MaterialDesignIcons をクリック
+    https://pictogrammers.com/library/mdi/
+  - 検索バーで delete を入力し、アイコン名 delete を選択
+  - ファイル v-icon タグにデフォルトで入っている mdi-information を、mdi-delete に上書きする

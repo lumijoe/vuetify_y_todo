@@ -43,11 +43,14 @@
               </v-list-item-title>
               <!-- <v-list-item-subtitle>Allow notifications</v-list-item-subtitle> -->
             </v-list-item-content>
+            <v-list-item-action>
+              <v-btn icon>
+                <v-icon color="grey lighten-1">mdi-delete</v-icon>
+              </v-btn>
+            </v-list-item-action>
           </template>
         </v-list-item>
         <v-divider></v-divider>
-       
-        
       </div>
 
         
