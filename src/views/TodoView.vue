@@ -1,8 +1,6 @@
 <template>
   <div class="home">
     <v-list
-      subheader
-      two-line
       flat
     >
       <!-- <v-subheader>Hangout notifications</v-subheader> -->
@@ -11,7 +9,9 @@
         v-model="settings"
         multiple
       > -->
-        <v-list-item>
+        <v-list-item
+          v-for="task in tasks"
+          :key="task.id">
           <template v-slot:default="{ active, }">
             <v-list-item-action>
               <v-checkbox
@@ -21,8 +21,8 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>Notifications</v-list-item-title>
-              <v-list-item-subtitle>Allow notifications</v-list-item-subtitle>
+              <v-list-item-title>{{ task.title }}</v-list-item-title>
+              <!-- <v-list-item-subtitle>Allow notifications</v-list-item-subtitle> -->
             </v-list-item-content>
           </template>
         </v-list-item>
@@ -39,6 +39,24 @@
 
   export default {
     name: 'Home',
+    data() {
+      return {
+        tasks: [
+          {
+            id: 1,
+            title: '銀行記帳' 
+          },
+          {
+            id: 2,
+            title: '計算' 
+          },
+          {
+            id: 3,
+            title: 'アプリ入力' 
+          },
+        ]
+      }
+    }
 
     // components: {
     //   HelloWorld,

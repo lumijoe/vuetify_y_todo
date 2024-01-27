@@ -40,6 +40,15 @@
 - package.json の dependencies の vuetify と、script の serve と build を確認する
 - 起動コマンドの確認　 npm run serve
 
+- **拡張機能：VS Sequential Number(数字の自動入力)の導入**
+- 入力したい行を複数選択：option+行をクリック
+- cmd+shift+p：コマンドパレットを開く
+- パレットに入力：Sequential Number: Insert
+- Enter で自動入力される
+
+- **拡張機能：Vetur(ディレクティブ推奨メッセージ)の導入**
+-
+
 ## 起動
 
 - npm run serve で起動

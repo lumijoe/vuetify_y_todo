@@ -84,7 +84,14 @@
   - ui/lists でチェックボックス仕様を確認　https://v2.vuetifyjs.com/en/components/lists/#subheadings-and-dividers
   - サイト script タグの v-divider の次の v-list タグを含む部分をコピー
   - ファイルの h1 タグ Todo Page をペーストで上書き
-- **src/views/TodoView.vue(機能を編集)**
+- **src/views/TodoView.vue(機能の削除)**
   - 複数選択機能を削除する：リスト上部に位置する v-list-item-group v-model="settings" multiple タグを削除
   - サブヘッダーのテキストを削除：v-subheader タグを削除
   - デフォルトの 4 つのリストを一旦 1 つに減らす
+  - リストのサブタイトルを削除し高さも調整：v-list-item-subtitle タグを削除し、v-list タグ内の subheader と two-line を削除する
+- **src/views/TodoView.vue(カスタム編集)**
+  - リストの項目のテキスト編集：v-list-item-title を好みのテキストに上書き
+  - script タグ内の export default 内に data 関数 を return と配列で追加し、リストの内容として id と title テキストを入力しておく
+  - それを呼び出して描画させるために template の親要素である v-list-item タグ内に v-for を配置
+  - 複数ある task を id で間違いなく指定する:key="task.id" を配置
+  - 一旦記入していたリストの直書きテキスト v-list-item-title を tasks から読み込ませるための書き換え：{{ task.title }}で上書きする
