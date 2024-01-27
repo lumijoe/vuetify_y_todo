@@ -5,6 +5,7 @@
       outlined
       label="Add Task"
       append-icon="mdi-plus"
+      hide-details
     ></v-text-field>
 
     <v-list

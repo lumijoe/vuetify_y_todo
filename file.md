@@ -140,3 +140,8 @@
     https://pictogrammers.com/library/mdi/
   - 検索バーで add と入力、icon 名 plus を確認
   - ファイルのデフォルト icon 名の部分、mdi-map-marker を mdi-plus に変更して上書き
+  - フィールドまわりの余計なスペースを無くしたいので、一旦何が当たっているのかを devtools で確認すると details というものが当たっていることが確認できる。details を削除するには props の可能性あり、props を検索してみる
+  - テキストフィールドの API を確認https://v2.vuetifyjs.com/en/components/text-fields/#api
+  - text-fields-api をクリックhttps://v2.vuetifyjs.com/en/api/v-text-field/#links
+  - props の下の方の hide-details 　を確認https://v2.vuetifyjs.com/en/api/v-text-field/#props-hide-details
+  - ファイルの v-text-field タグの icon の下に hide-details だけ追加すると details が非表示になり余分なスペースが削除される
