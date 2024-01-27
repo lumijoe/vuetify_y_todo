@@ -128,3 +128,15 @@
   - icon のカラーを指定：v-icon color="gray..."gray を primary などに変更
   - icon をクリックした時の処理：v-btn タグに@click.stop を追加して
   - exportdefault の methods に deleteTask(id) {this.tasks = this.tasks.filter(task => task.id !== id)} を追加する
+- **src/view/TodoView.vue(リストの新規追加機能を追加)**
+  - フォームの確認 ui/form inputs~ でテキスト入力と追加ボタンのアイコンが配置できるものを確認　https://v2.vuetifyjs.com/en/components/text-fields/#icons
+  - <>で、下から２番目の右シンプルなデザイン v-text-field タグ　 outlined 　 label="Append"　 append-icon="mdi-map-marker"を選択してコピー
+  - v-list の上部に表示させたいので、ファイルの v-list の手前に配置
+  - padding を調整：v-text-field タグに class="pa-3"を追加
+  - label のテキストを Add Task などに変更して上書き
+  - append-icon を新規追加ボタンに適したものを選択するため
+  - ui/icons https://v2.vuetifyjs.com/en/components/icons/
+  - のテキスト部分 MaterialDesignIcons をクリック
+    https://pictogrammers.com/library/mdi/
+  - 検索バーで add と入力、icon 名 plus を確認
+  - ファイルのデフォルト icon 名の部分、mdi-map-marker を mdi-plus に変更して上書き
