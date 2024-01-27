@@ -158,4 +158,19 @@
 - **src/view/TodoView.vue(新規追加から配列に入れ込む処理へと変更する)**
   - 一旦入力しているデフォルトテキストである tasks 配列の中身は、一例なのでユーザーが欲しい情報だけをリストに表示するために、デフォルトテキストを一旦コメントアウトする。tasks:[//]中身をコメントアウト
   - リストがクリアな状態で新規追加入力をしても、保存はされないことを確認、リロードしたら情報が保存されていないことがわかる。保存するために
-  - v-list タグに v-if="tasks.length"を追加し配列があればを定義し、そのタグの次のタグとして div タグを配置、その div タグに v-else で No tasks と表示されるようにテキストを追加
+  - v-list タグに v-if="tasks.length"を追加し配列があればを定義し、そのタグの次のタグとして div タグを配置、その div タグに v-else で No tasks と表示されるようにテキストを一旦追加して表示されるかを確認
+  - 確認できればテキスト表示を スタイリングするため
+  - styles~/text~ で h5 を確認https://v2.vuetifyjs.com/en/styles/text-and-typography/
+  - ファイルの No tasks を div で括り class="text-h5 primary--text"を記述することでテキストサイズと文字色を変更する
+  - icon でも表示したいところだが icon がデフォルトでないため上書きすることができないパターン。の場合、まず icon 配置ができるコードをコピーする ui/icons https://v2.vuetifyjs.com/en/components/icons/#examples
+  - v-icon タグをファイルの No tasks の上に配置させ icon 表示を確認できたら
+  - ui/icons https://v2.vuetifyjs.com/en/components/icons/
+  - のテキスト部分 MaterialDesignIcons をクリック
+    https://pictogrammers.com/library/mdi/
+  - 検索バーで check を入力して相応しいファイル名 check を確認
+  - ファイルの v-icon タグの mdi-domain を mdi-check に、color を green から primary に上書きする
+  - size を変更する：ui/v-icon API の props size を確認するhttps://v2.vuetifyjs.com/en/api/v-icon/#props-size
+  - ファイルの v-icon の props large を削除し size="100"で上書きする
+  - icon とテキストをページの中央に寄せるために親要素の v-else がついている div タグに class="no-tasks"を追加する
+  - no-tasks をスタイル登録するために、script タグの下に style タグを記述する
+  - .no-tasks の中身を記述で、中央に opacity50%で表示される
