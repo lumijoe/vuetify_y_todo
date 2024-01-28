@@ -176,7 +176,7 @@
   - no-tasks をスタイル登録するために、script タグの下に style タグを記述する
   - .no-tasks の中身を記述で、中央に opacity50%で表示される
 
-- **src/store/index.js(クライアントでの状態管理を可能にする Vuex)**
+- **src/store/index.js(クライアントでの状態管理を可能にする Vuex Store)**
 
   - デフォルトテキストでなく、入力、表示などの状態で描画する方法へ UI を変更するために
   - 今回は export default の state: mutations: actions: getters:が必要で、modules:は削除する。ないものは追加する
