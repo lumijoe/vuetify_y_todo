@@ -68,8 +68,6 @@
         </v-list-item>
         <v-divider></v-divider>
       </div>
-
-        
       <!-- </v-list-item-group> -->
     </v-list>
     <div
