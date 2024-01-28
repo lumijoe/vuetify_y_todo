@@ -156,6 +156,7 @@
   - export default の methods の addTask() {}の console.log 部分を let newTask = {id: Date.now(),title: this.newTaskTitle,done: false}this.tasks.push(newTask)に上書きし、tasks 配列と同じ項目にする
   - 入力してリストが追加されると同時に入力フォームに入力したテキストが残っているものを自動でクリアするために、this.newTaskTitle = ''を追加する
 - **src/view/TodoView.vue(新規追加から描画させる処理に変更する)**
+
   - 一旦入力しているデフォルトテキストである tasks 配列の中身は、一例なのでユーザーが欲しい情報だけを描画するために、デフォルトテキストを一旦コメントアウトする。tasks:[//]中身をコメントアウト
   - リストがクリアな状態で新規追加入力をしても、保存はされないことを確認、リロードしたら情報が保存されていないことがわかる。保存するために
   - v-list タグに v-if="tasks.length"を追加し配列があればを定義し、そのタグの次のタグとして div タグを配置、その div タグに v-else で No tasks と表示されるようにテキストを一旦追加して表示されるかを確認
@@ -174,3 +175,8 @@
   - icon とテキストをページの中央に寄せるために親要素の v-else がついている div タグに class="no-tasks"を追加する
   - no-tasks をスタイル登録するために、script タグの下に style タグを記述する
   - .no-tasks の中身を記述で、中央に opacity50%で表示される
+
+- **src/store/index.js(クライアントでの状態管理を可能にする Vuex)**
+
+  - デフォルトテキストでなく、入力、表示などの状態で描画する方法へ UI を変更するために
+  - 今回は export default の state: mutations: actions: getters:が必要で、modules:は削除する。ないものは追加する
