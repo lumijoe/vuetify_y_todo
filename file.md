@@ -201,3 +201,5 @@
     - v-text-field タグの@click:append="addTask"
       @keyup.enter="addTask"を、@click:append="$store.commit('addTask, newTaskTitle')"
       @keyup.enter="$store.commit('addTask, newTaskTitle')"に上書きする
+  - **devtools の vue タブ(chrome 拡張機能)で状態確認する**
+    - 新規追加動作確認として実機またはブラウザで入力し devtools の elements などの左にある vue タブを確認すると base state から addTask の処理がなされているのが履歴で確認できる
