@@ -176,7 +176,7 @@
   - no-tasks をスタイル登録するために、script タグの下に style タグを記述する
   - .no-tasks の中身を記述で、中央に opacity50%で表示される
 
-- **src/store/index.js(クライアントでの状態管理を可能にする Vuex Store)**
+- **src/store/index.js(クライアントでの状態管理を可能にする Vuex Store の　 state)**
 
   - デフォルトテキストでなく、入力、表示などの状態で描画する方法へ UI を変更するために
   - 今回は export default の state: mutations: actions: getters:が必要で、modules:は削除する。ないものは追加する
@@ -184,7 +184,12 @@
   - それまでは src/views/TodoView.vue ファイルの v-for="task in tasks"をリストとして繰り返し表示していたので、そのコードを state:{}に読み込みにいくように処理する必要があるので
 
 - **src/views/TodoView.vue(リストとなる配列を読み込むコードを変更する)**
+
   - tasks の配列を src/store/index.js ファイル内の state:{}に移動させたので、v-for="task in tasks"ではなく、移動先のパスを記述する必要がある
   - v-for="task in $store.state.tasks"に上書きする
   - その他にもそれまでの tasks 配列読み込みになっている部分を上書きするため
   - v-if="tasks.length"部分も v-if="$store.state.tasks.length"に上書きする
+
+- **src/store/index.js(クライアントでの状態管理を可能にする Vuex Store の mutations)**
+  - 追加の状態を管理するため、ファイル src/views/TodoView.vue の methods: {}内の addTask(){}内を移動させるためにコピー
+  - ファイルの mutations:{}内にペーストして移動させる

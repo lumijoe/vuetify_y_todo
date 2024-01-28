@@ -29,6 +29,16 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    addTask() {
+      // console.log('addTask');
+      let newTask = {
+        id: Date.now(),
+        title: this.newTaskTitle,
+        done: false
+      }
+      this.tasks.push(newTask)
+      this.newTaskTitle = ''
+    },
   },
   actions: {
   },

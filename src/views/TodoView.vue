@@ -124,16 +124,16 @@
       }
     },
     methods: {
-      addTask() {
-        // console.log('addTask');
-        let newTask = {
-          id: Date.now(),
-          title: this.newTaskTitle,
-          done: false
-        }
-        this.tasks.push(newTask)
-        this.newTaskTitle = ''
-      },
+      // addTask() {
+      //   // console.log('addTask');
+      //   let newTask = {
+      //     id: Date.now(),
+      //     title: this.newTaskTitle,
+      //     done: false
+      //   }
+      //   this.tasks.push(newTask)
+      //   this.newTaskTitle = ''
+      // },
       doneTask(id) {
         // console.log('id: ', id)
         let task = this.tasks.filter(task => task.id === id)[0]
