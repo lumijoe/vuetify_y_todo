@@ -29,7 +29,7 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    addTask() {
+    addTask(state, newTaskTitle) {
       // console.log('addTask');
       let newTask = {
         id: Date.now(),

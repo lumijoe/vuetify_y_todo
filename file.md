@@ -193,3 +193,6 @@
 - **src/store/index.js(クライアントでの状態管理を可能にする Vuex Store の mutations)**
   - 追加の状態を管理するため、ファイル src/views/TodoView.vue の methods: {}内の addTask(){}内を移動させるためにコピー
   - ファイルの mutations:{}内にペーストして移動させる
+  - addTask()括弧内を addTask(state)に上書きして、アクセスできるようにする
+  - さらに、addTask(state, newTaskTitle)に上書きして、let newTask = {}内を次のように変更する
+  -
