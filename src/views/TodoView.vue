@@ -1,9 +1,20 @@
 <template>
   <div class="home">
-    <v-text-field
+    <!-- <v-text-field
       v-model="newTaskTitle"
       @click:append="addTask"
       @keyup.enter="addTask"
+      class="pa-3"
+      outlined
+      label="Add Task"
+      append-icon="mdi-plus"
+      hide-details
+      clearable
+    ></v-text-field> -->
+    <v-text-field
+      v-model="newTaskTitle"
+      @click:append="$store.commit('addTask', newTaskTitle)"
+      @keyup.enter="$store.commit('addTask', newTaskTitle)"
       class="pa-3"
       outlined
       label="Add Task"

@@ -36,7 +36,7 @@ export default new Vuex.Store({
         title: newTaskTitle,
         done: false
       }
-      this.tasks.push(newTask)
+      state.tasks.push(newTask)
       // this.newTaskTitle = ''
     },
   },

@@ -182,15 +182,14 @@
   - 今回は export default の state: mutations: actions: getters:が必要で、modules:は削除する。ないものは追加する
   - src/views/TodoView.vue の tasks 配列ごとコピーし、state: {}内にペースト移動させる
   - それまでは src/views/TodoView.vue ファイルの v-for="task in tasks"をリストとして繰り返し表示していたので、そのコードを state:{}に読み込みにいくように処理する必要があるので
+  - **src/views/TodoView.vue(移動によるパスやコード変更)**
 
-- **src/views/TodoView.vue(リストとなる配列を読み込むコードを変更する)**
+    - tasks の配列を src/store/index.js ファイル内の state:{}に移動させたので、v-for="task in tasks"ではなく、移動先のパスを記述する必要がある
+    - v-for="task in $store.state.tasks"に上書きする
+    - その他にもそれまでの tasks 配列読み込みになっている部分を上書きするため
+    - v-if="tasks.length"部分も v-if="$store.state.tasks.length"に上書きする
 
-  - tasks の配列を src/store/index.js ファイル内の state:{}に移動させたので、v-for="task in tasks"ではなく、移動先のパスを記述する必要がある
-  - v-for="task in $store.state.tasks"に上書きする
-  - その他にもそれまでの tasks 配列読み込みになっている部分を上書きするため
-  - v-if="tasks.length"部分も v-if="$store.state.tasks.length"に上書きする
-
-- **src/store/index.js(クライアントでの状態管理を可能にする Vuex Store の mutations)**
+- **src/store/index.js(クライアントで追加状態の管理を可能にする Vuex Store の mutations)**
   - 追加の状態を管理するため、ファイル src/views/TodoView.vue の methods: {}内の addTask(){}内を移動させるためにコピー
   - ファイルの mutations:{}内にペーストして移動させる
   - addTask()括弧内を addTask(state)に上書きして、アクセスできるようにする
@@ -198,3 +197,7 @@
   - title: this.newTaskTitle を、title: newTaskTitle に上書き
   - this.tasks.push(newTask)を、state.tasks.push(newTask)に上書き
   - this.newTaskTitle = ''を削除
+  - **src/views/TodoView.vue(移動によるパスやコード変更)**
+    - v-text-field タグの@click:append="addTask"
+      @keyup.enter="addTask"を、@click:append="$store.commit('addTask, newTaskTitle')"
+      @keyup.enter="$store.commit('addTask, newTaskTitle')"に上書きする
