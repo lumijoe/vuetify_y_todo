@@ -12,8 +12,13 @@
       clearable
     ></v-text-field>
 
-    <v-list
+    <!-- <v-list
       v-if="tasks.length"
+      class="pt-0"
+      flat
+    > -->
+    <v-list
+      v-if="$store.state.tasks.length"
       class="pt-0"
       flat
     >
@@ -23,8 +28,12 @@
         v-model="settings"
         multiple
       > -->
-      <div
+      <!-- <div
         v-for="task in tasks"
+        :key="task.id"
+      > -->
+      <div
+        v-for="task in $store.state.tasks"
         :key="task.id"
       >
       <!-- <v-list-item
@@ -95,23 +104,23 @@
     data() {
       return {
         newTaskTitle: '',
-        tasks: [
-          // {
-          //   id: 1,
-          //   title: '銀行記帳' ,
-          //   done: false
-          // },
-          // {
-          //   id: 2,
-          //   title: '計算' ,
-          //   done: false
-          // },
-          // {
-          //   id: 3,
-          //   title: 'アプリ入力' ,
-          //   done: false
-          // }
-        ]
+        // tasks: [
+        //   {
+        //     id: 1,
+        //     title: '銀行記帳' ,
+        //     done: false
+        //   },
+        //   {
+        //     id: 2,
+        //     title: '計算' ,
+        //     done: false
+        //   },
+        //   {
+        //     id: 3,
+        //     title: 'アプリ入力' ,
+        //     done: false
+        //   }
+        // ]
       }
     },
     methods: {
