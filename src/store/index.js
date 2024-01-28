@@ -33,11 +33,11 @@ export default new Vuex.Store({
       // console.log('addTask');
       let newTask = {
         id: Date.now(),
-        title: this.newTaskTitle,
+        title: newTaskTitle,
         done: false
       }
       this.tasks.push(newTask)
-      this.newTaskTitle = ''
+      // this.newTaskTitle = ''
     },
   },
   actions: {

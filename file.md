@@ -195,4 +195,6 @@
   - ファイルの mutations:{}内にペーストして移動させる
   - addTask()括弧内を addTask(state)に上書きして、アクセスできるようにする
   - さらに、addTask(state, newTaskTitle)に上書きして、let newTask = {}内を次のように変更する
-  -
+  - title: this.newTaskTitle を、title: newTaskTitle に上書き
+  - this.tasks.push(newTask)を、state.tasks.push(newTask)に上書き
+  - this.newTaskTitle = ''を削除
