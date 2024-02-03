@@ -13,8 +13,8 @@
     ></v-text-field> -->
     <v-text-field
       v-model="newTaskTitle"
-      @click:append="$store.commit('addTask', newTaskTitle)"
-      @keyup.enter="$store.commit('addTask', newTaskTitle)"
+      @click:append="addTask"
+      @keyup.enter="addTask"
       class="pa-3"
       outlined
       label="Add Task"
@@ -145,10 +145,9 @@
       //   this.tasks.push(newTask)
       //   this.newTaskTitle = ''
       // },
-      doneTask(id) {
-        // console.log('id: ', id)
-        let task = this.tasks.filter(task => task.id === id)[0]
-        task.done = !task.done
+      addTask() {
+        this.$store.commit('addTask', this.newTaskTitle)
+        this.newTaskTitle = ''
       },
       deleteTask(id) {
         this.tasks = this.tasks.filter(task => task.id !== id)

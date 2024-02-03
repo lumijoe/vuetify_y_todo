@@ -202,4 +202,14 @@
       @keyup.enter="addTask"を、@click:append="$store.commit('addTask, newTaskTitle')"
       @keyup.enter="$store.commit('addTask, newTaskTitle')"に上書きする
   - **devtools の vue タブ(chrome 拡張機能)で状態確認する**
-    - 新規追加動作確認として実機またはブラウザで入力し devtools の elements などの左にある vue タブを確認すると base state から addTask の処理がなされているのが履歴で確認できる
+    - 新規追加動作確認として実機またはブラウザで入力し devtools の elements などの左にある vue タブの時計アイコンの filtermutations の処理実行ボタンが有効になっていれば base state ログに addTask バーが追加され、中身の処理がなされている事がログで確認できる
+  - **src/views/TodoView.vue(addTask)**
+    - ＠click：append と@keyup.enter の="$store.commit('addTask', newTaskTitle)"から"addTask"に書き換えて
+    - script タグの methods：に addTask の処理を追加、先ほどの$store.commit('addTask', this.newTaskTitle)の部分の先頭に this.を追加して中身の処理としてペーストし、その下に、this.newTaskTitle=''とし、新規追加をテストしてリストに表示されていれば一旦 OK
+  - **src/views/TodoView.vue(doneTask)**
+    - methods: {doneTask(id)...}をコピーし
+  - **src/router/index.js(mutations)**
+    - の mutations: {addTask}の次にペーストし、doeTask(id)から上書きし
+  - **src/views/TodoView.vue** - v-list-item の@click="doneTask..."
+    部分を$store.commit('doneTask', task.id)に変更する
+    27 章途中
