@@ -51,7 +51,7 @@
           v-for="task in tasks"
           :key="task.id"> -->
         <v-list-item
-          @click="doneTask(task.id)"
+          @click="$store.commit('doneTask', task.id)"
           :class="{ 'blue lighten-5' : task.done }"
         >
           <!-- <template v-slot:default="{ active, }">
