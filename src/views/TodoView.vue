@@ -1,16 +1,8 @@
 <template>
   <div class="home">
-    <!-- <v-text-field
-      v-model="newTaskTitle"
-      @click:append="addTask"
-      @keyup.enter="addTask"
-      class="pa-3"
-      outlined
-      label="Add Task"
-      append-icon="mdi-plus"
-      hide-details
-      clearable
-    ></v-text-field> -->
+    <!---------------------------------------
+      入力フォーム 
+    ---------------------------------------->
     <v-text-field
       v-model="newTaskTitle"
       @click:append="addTask"
@@ -23,61 +15,55 @@
       clearable
     ></v-text-field>
 
-    <!-- <v-list
-      v-if="tasks.length"
-      class="pt-0"
-      flat
-    > -->
+
+    <!--------------------------------------- 
+      フォーム下リスト 
+    ---------------------------------------->
+    <!-- リスト -->
     <v-list
       v-if="$store.state.tasks.length"
       class="pt-0"
       flat
     >
-      <!-- <v-subheader>Let's Do This 😃</v-subheader> -->
-
-      <!-- <v-list-item-group
-        v-model="settings"
-        multiple
-      > -->
-      <!-- <div
-        v-for="task in tasks"
-        :key="task.id"
-      > -->
+    
+      <!-- メッセージ表示 -->
+      <v-subheader>Let's Do This 😃</v-subheader>
+      
+      <!-- タスクの繰り返し表示 -->
       <div
         v-for="task in $store.state.tasks"
         :key="task.id"
       >
-      <!-- <v-list-item
-          v-for="task in tasks"
-          :key="task.id"> -->
+    
+        <!-- リストアイテムの表示設定 -->
         <v-list-item
-          @click="$store.commit('doneTask', task.id)"
-          :class="{ 'blue lighten-5' : task.done }"
+            @click="$store.commit('doneTask', task.id)"
+            :class="{ 'blue lighten-5' : task.done }"
         >
-          <!-- <template v-slot:default="{ active, }">
-            <v-list-item-action>
-              <v-checkbox
-                :input-value="active"
-                color="primary"
-              ></v-checkbox> -->
-            <template v-slot:default>
+          
+          <!-- リスト機能の設定 -->
+          <template v-slot:default>
+            <!-- デフォルト時 -->
             <v-list-item-action>
               <v-checkbox
                 :input-value="task.done"
                 color="primary"
               ></v-checkbox>
             </v-list-item-action>
-
+            
+            <!-- 完了時 -->
             <v-list-item-content>
               <v-list-item-title
                 :class="{ 'text-decoration-line-through' : task.done }"
               >
-                {{ task.title }}
+              {{ task.title }}
               </v-list-item-title>
               <!-- <v-list-item-subtitle>Allow notifications</v-list-item-subtitle> -->
             </v-list-item-content>
-
+            
+            <!-- 削除時 -->
             <v-list-item-action>
+              <!-- 削除ボタン、アイコン -->
               <v-btn
                 @click.stop="$store.commit('deleteTask', task.id)"
                 icon
@@ -86,11 +72,17 @@
               </v-btn>
             </v-list-item-action>
           </template>
+
         </v-list-item>
+        <!-- ディバイダー -->
         <v-divider></v-divider>
-      </div>
-      <!-- </v-list-item-group> -->
+      </div> 
     </v-list>
+
+    <!-- リストここまで -->
+
+
+    
     <div
       v-else
       class="no-tasks"
