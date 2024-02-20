@@ -29,6 +29,7 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    // 追加機能
     addTask(state, newTaskTitle) {
       // console.log('addTask');
       let newTask = {
@@ -39,10 +40,17 @@ export default new Vuex.Store({
       state.tasks.push(newTask)
       // this.newTaskTitle = ''
     },
+
+    // 完了済み機能
     doneTask(state, id) {
       let task = state.tasks.filter(task => task.id === id)[0]
       task.done = !task.done
     },
+
+    // 削除機能
+    deleteTask(state, id) {
+        state.tasks = state.tasks.filter(task => task.id !== id)
+      }
   },
   actions: {
   },
