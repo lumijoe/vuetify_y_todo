@@ -215,7 +215,7 @@
       部分を$store.commit('doneTask', task.id)に変更する
   - **src/views/TodoView.vue(deleteTask)**
     - methods: {deleteTask(id)...}をコピーし
-  - **src/router/index.js(mutations)**
+  - **src/router/index.js(mutations へ移動)**
     - の mutations: {doneTask}の次にペーストし、deleteTask の this.tasks を state.tasks に上書き、(id)を（state, id）に上書き
   - **src/views/TodoView.vue**
     - v-btn @click.stop="deleteTask(task.id)"の部分を"$store.commit('deleteTask', task.id)"に変更し、削除ボタンが処理されるか UI テストしながら Dev Tools の Vue タブで mutation 処理がなされているかを確認する
