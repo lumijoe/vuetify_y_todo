@@ -25,6 +25,26 @@ export default new Vuex.Store({
         id: 4,
         title: 'アプリ編集' ,
         done: false
+      },
+      {
+        id: 5,
+        title: 'バックアップメンテ' ,
+        done: false
+      },
+      {
+        id: 6,
+        title: 'パーテーション戻す' ,
+        done: false
+      },
+      {
+        id: 7,
+        title: 'ターミナルショートカット設定' ,
+        done: false
+      },
+      {
+        id: 8,
+        title: 'asana入力' ,
+        done: false
       }
     ]
   },

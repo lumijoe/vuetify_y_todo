@@ -62,5 +62,9 @@
 - npm run serve で起動
 - localhost でブラウザ表示確認できれば起動成功
 
+## デフォルト画面のタスクサンプル
+
+- src/store/index.js の export default new Vuex.Store の state: tasks:で設定しておく
+
 **日本語入力の変換決定の enter と、実行の enter の区別が必要**
 **モバイルのタップがブラウザのエンターとイコールではない動作**
