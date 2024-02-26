@@ -219,3 +219,8 @@
     - の mutations: {doneTask}の次にペーストし、deleteTask の this.tasks を state.tasks に上書き、(id)を（state, id）に上書き
   - **src/views/TodoView.vue**
     - v-btn @click.stop="deleteTask(task.id)"の部分を"$store.commit('deleteTask', task.id)"に変更し、削除ボタンが処理されるか UI テストしながら Dev Tools の Vue タブで mutation 処理がなされているかを確認する
+
+## 7:Todo ページのコンテンツ内の入力フォームをコンポーネントにする
+
+- **src/components/Todo/FieldAddTask.vue（作成する）**
+  - vite 導入であれば vue と入力するとテンプレートコードが出てくるので利用して開発コストを爆上げする
