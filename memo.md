@@ -51,6 +51,7 @@
 
 - **拡張機能：Vetur(ディレクティブ推奨メッセージ)の導入**
 - するも、他の volar や githubservice 推奨も試すが npm audit がうまくいかず一旦全て導入見送る
+- コードを入力する際に vue と入力するだけで template, script, style タグが出力される開発効率の上がる拡張機能
 
 - **拡張機能：devtools の Chrome ストアで Vue.js Devtools の導入**
 - イベントの確認や状態管理が確認できる
