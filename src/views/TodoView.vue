@@ -4,12 +4,15 @@
 <template>
   <!-- ページ：home -->
   <div class="home">
-
-
+    
 
     <!---------------------------------------
       入力フォーム 
     ---------------------------------------->
+    <!-- コンポーネント化したfield-add-task
+          scriptでimportし、components処理でコンポーネント名を登録
+        　templateタグ内でhtmlタグにすることでUIとして描画される -->
+    <field-add-task />
     <!-- 
       このコードはsrc/components/Todo/FieldAddTask.vueのコンポーネントとなる
       <v-text-field
@@ -127,9 +130,7 @@
   // Hello world
   // コンポーネントの読み込みも可能import HelloWorld from '../components/HelloWorld'
   import FieldAddTask from '@/components/Todo/FieldAddTask.vue'
-  // またはimportを書かずに、componentsのFieldAddTaskの部分をrezuire('@/components/Todo/FieldAddTask.vue').defaultと書いても同じ意味になる
-
-
+  
 
   export default {
     name: 'Home',
