@@ -234,4 +234,4 @@
   - script タグの先頭で import を記述し(from @の＠は src に置き換えれる)
   - script タグの中の methods の下に components:{html タグ:コンポーネント名}を記述する
   - または import を書かずに、components の FieldAddTask の部分を rezuire('@/components/Todo/FieldAddTask.vue').default と書いても同じ意味になる
-  - template タグの上部 div タグ home がクラスでついている中に html タグを記述することで、script で import したコンポーネントを、components で処理されるために html タグでリンクさせ、html タグ内（template タグ内）で一致させることで UI にコンポーネントが描画される仕組み。
+  - **template タグの上部 div タグ home がクラスでついている中に html タグを記述することで、script で import したコンポーネントを、components で処理されるために html タグでリンクさせ、html タグ内（template タグ内）で一致させることで UI にコンポーネントが描画される仕組み。**
