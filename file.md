@@ -224,3 +224,12 @@
 
 - **src/components/Todo/FieldAddTask.vue（作成する）**
   - 拡張機能 Vetur 導入であれば vue と入力するとテンプレートコードが出てくるので利用して開発生産性を爆上げする
+  - template, script, style タグが生成される
+- **src/views/TodoView.vue**
+  - 入力フォームの v-text-field タグをコピーして
+- **src/components/Todo/FieldAddTask.vue**
+  - template タグ内にペーストする（そのままでは components をまだ使用していないので UI では入力フォームが見えていない状態である）
+    UI で見れるようにするにはエントリーポイントである TodoView.vue で import する必要があるので
+- **src/views/TodoView.vue**
+  - script タグの先頭で import を記述し(from @の＠は src に置き換えれる)
+  - script タグの中の methods の下に components:を記述する

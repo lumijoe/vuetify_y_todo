@@ -10,7 +10,9 @@
     <!---------------------------------------
       入力フォーム 
     ---------------------------------------->
-    <v-text-field
+    <!-- 
+      このコードはsrc/components/Todo/FieldAddTask.vueのコンポーネントとなる
+      <v-text-field
       v-model="newTaskTitle"
       @click:append="addTask"
       @keyup.enter="addTask"
@@ -20,7 +22,7 @@
       append-icon="mdi-plus"
       hide-details
       clearable
-    ></v-text-field>
+    ></v-text-field> -->
     <!-- -------------------------------- -->
 
 
@@ -124,6 +126,10 @@
 <script>
   // Hello world
   // コンポーネントの読み込みも可能import HelloWorld from '../components/HelloWorld'
+  import FieldAddTask from '@/components/Todo/FieldAddTask.vue'
+  // またはimportを書かずに、componentsのFieldAddTaskの部分をrezuire('@/components/Todo/FieldAddTask.vue').defaultと書いても同じ意味になる
+
+
 
   export default {
     name: 'Home',
@@ -164,6 +170,9 @@
         this.$store.commit('addTask', this.newTaskTitle)
         this.newTaskTitle = ''
       }
+    },
+    components: {
+      'field-add-task': FieldAddTask
     }
 
     // components: {
