@@ -135,11 +135,12 @@
 <script>
   // Hello world
   // コンポーネントの読み込みも可能import HelloWorld from '../components/HelloWorld'
-  import FieldAddTask from '@/components/Todo/FieldAddTask.vue'
+  // import FieldAddTask from '@/components/Todo/FieldAddTask.vue'と書かなくてもcomponentsでrequireの書き方でimportができる。
   
 
   export default {
     name: 'Home',
+    // components: {'field-add-task':FiledAddTask}(importとした場合の記述)
     components: {
       'field-add-task': require('@/components/Todo/FieldAddTask.vue').default, 
       'list-tasks': require('@/components/Todo/ListTasks.vue').default

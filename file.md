@@ -253,3 +253,15 @@
 - **src/views/TodoView.vue**
   - script タグ内に require('@/components/Todo/ListTasks.vue').default と
   - template タグ内に list-tasks のタグを記述し v-if をペーストする
+
+## 9:List 繰り返し　　コンポーネントにした ListTask 内の v-for をコンポーネントにする
+
+- **src/components/Todo/Task.vue（作成する）**
+  - 拡張機能 Vetur 導入であれば vue と入力するとテンプレートコードが出てくるので利用して開発生産性を爆上げする
+  - template, script, style タグが生成される
+- **src/views/TodoView.vue**
+  - div v-for の タグをコピーして
+- **src/components/Todo/Task.vue**
+  - template タグにペーストし、v-for と:key 部分を削除（後にペーストするのでコピーしておく）
+- **src/components/Todo/ListTasks.vue**
+  - template タグ内にペーストし、v-if を削除する（後ほどペーストするのでコピーしておく）
