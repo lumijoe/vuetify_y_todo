@@ -235,7 +235,7 @@
   - script タグの中の methods の下に components:{html タグ:コンポーネント名}を記述する
   - または import を書かずに、components の FieldAddTask の部分を rezuire('@/components/Todo/FieldAddTask.vue').default と書いても同じ意味になる
   - **template タグの上部 div タグ home がクラスでついている中に html タグを記述することで、script で import したコンポーネントを、components で処理されるために html タグでリンクさせ、html タグ内（template タグ内）で一致させることで UI にコンポーネントが描画される仕組み。**
-  - ここまでだけだと画像が非表示になっていたり入力フォームやページ遷移の挙動がおかしい状態に一旦なるが、次の処理をする事で画像もきちんと反映され、ページ遷移なども動くようになる
+  - ここまでだけだと画像が非表示になっていたり入力フォームやページ遷移の挙動がおかしい状態に一旦なるが、そのまま次の処理をする事で画像もきちんと反映され、ページ遷移なども動くようになる
   - export の data()から components 手前までコピーして
 - **src/components/Todo/FieldAddTask.vue**
   - script タグにペースト
