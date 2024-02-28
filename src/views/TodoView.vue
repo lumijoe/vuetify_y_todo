@@ -13,6 +13,9 @@
           scriptでimportし、components処理でコンポーネント名を登録
         　templateタグ内でhtmlタグにすることでUIとして描画される -->
     <field-add-task />
+    <list-tasks
+      v-if="$store.state.tasks.length"
+    />
     
       <!-- このコードはsrc/components/Todo/FieldAddTask.vueのコンポーネントとなる 
       <v-text-field
@@ -34,51 +37,53 @@
       フォーム下リスト 
     ---------------------------------------->
     <!-- リスト -->
+    <!-- このコードはsrc/components/Todo/ListTasks.vueのコンポーネントとなる -->
+    <!--  
     <v-list
       v-if="$store.state.tasks.length"
       class="pt-0"
       flat
-    >
+    >-->
     
       <!-- メッセージ表示 -->
-      <v-subheader>Let's Do This 😃</v-subheader>
+      <!-- <v-subheader>Let's Do This 😃</v-subheader> -->
       
       <!-- タスクの繰り返し表示 -->
-      <div
+      <!-- <div
         v-for="task in $store.state.tasks"
         :key="task.id"
-      >
+      > -->
     
         <!-- リストアイテムの表示設定 -->
-        <v-list-item
+        <!-- <v-list-item
             @click="$store.commit('doneTask', task.id)"
             :class="{ 'blue lighten-5' : task.done }"
-        >
+        > -->
           
           <!-- リスト機能の設定 -->
-          <template v-slot:default>
+          <!-- <template v-slot:default> -->
             <!-- デフォルト時 -->
-            <v-list-item-action>
+            <!-- <v-list-item-action>
               <v-checkbox
                 :input-value="task.done"
                 color="primary"
               ></v-checkbox>
-            </v-list-item-action>
+            </v-list-item-action> -->
             
             <!-- 完了時 -->
-            <v-list-item-content>
+            <!-- <v-list-item-content>
               <v-list-item-title
                 :class="{ 'text-decoration-line-through' : task.done }"
               >
               {{ task.title }}
-              </v-list-item-title>
+              </v-list-item-title> -->
               <!-- <v-list-item-subtitle>Allow notifications</v-list-item-subtitle> -->
-            </v-list-item-content>
+            <!-- </v-list-item-content> -->
             
             <!-- 削除時 -->
-            <v-list-item-action>
+            <!-- <v-list-item-action> -->
               <!-- 削除ボタン、アイコン -->
-              <v-btn
+              <!-- <v-btn
                 @click.stop="$store.commit('deleteTask', task.id)"
                 icon
               >
@@ -87,11 +92,11 @@
             </v-list-item-action>
           </template>
 
-        </v-list-item>
+        </v-list-item> -->
         <!-- ディバイダー -->
-        <v-divider></v-divider>
+        <!-- <v-divider></v-divider>
       </div> 
-    </v-list>
+    </v-list> -->
     <!-- -------------------------------- -->
 
 
@@ -135,7 +140,8 @@
   export default {
     name: 'Home',
     components: {
-      'field-add-task': require('@/components/Todo/FieldAddTask.vue').default
+      'field-add-task': require('@/components/Todo/FieldAddTask.vue').default, 
+      'list-tasks': require('@/components/Todo/ListTasks.vue').default
     }
   }
 </script>
