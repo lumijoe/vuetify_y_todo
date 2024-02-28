@@ -14,6 +14,44 @@
 
 <script>
 export default {
+  data() {
+      return {
+        newTaskTitle: '',
+        // tasks: [
+        //   {
+        //     id: 1,
+        //     title: '銀行記帳' ,
+        //     done: false
+        //   },
+        //   {
+        //     id: 2,
+        //     title: '計算' ,
+        //     done: false
+        //   },
+        //   {
+        //     id: 3,
+        //     title: 'アプリ入力' ,
+        //     done: false
+        //   }
+        // ]
+      }
+    },
+    methods: {
+      // addTask() {
+      //   // console.log('addTask');
+      //   let newTask = {
+      //     id: Date.now(),
+      //     title: this.newTaskTitle,
+      //     done: false
+      //   }
+      //   this.tasks.push(newTask)
+      //   this.newTaskTitle = ''
+      // },
+      addTask() {
+        this.$store.commit('addTask', this.newTaskTitle)
+        this.newTaskTitle = ''
+      }
+    },
 
 }
 </script>
