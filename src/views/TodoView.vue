@@ -13,9 +13,7 @@
           scriptでimportし、components処理でコンポーネント名を登録
         　templateタグ内でhtmlタグにすることでUIとして描画される -->
     <field-add-task />
-    <list-tasks
-      v-if="$store.state.tasks.length"
-    />
+   
     
       <!-- このコードはsrc/components/Todo/FieldAddTask.vueのコンポーネントとなる 
       <v-text-field
@@ -38,6 +36,9 @@
     ---------------------------------------->
     <!-- リスト -->
     <!-- このコードはsrc/components/Todo/ListTasks.vueのコンポーネントとなる -->
+    <list-tasks
+      v-if="$store.state.tasks.length"
+    />
     <!--  
     <v-list
       v-if="$store.state.tasks.length"
