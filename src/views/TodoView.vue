@@ -13,8 +13,8 @@
           scriptでimportし、components処理でコンポーネント名を登録
         　templateタグ内でhtmlタグにすることでUIとして描画される -->
     <field-add-task />
-    <!-- 
-      このコードはsrc/components/Todo/FieldAddTask.vueのコンポーネントとなる
+    
+      <!-- このコードはsrc/components/Todo/FieldAddTask.vueのコンポーネントとなる 
       <v-text-field
       v-model="newTaskTitle"
       @click:append="addTask"
@@ -25,7 +25,7 @@
       append-icon="mdi-plus"
       hide-details
       clearable
-    ></v-text-field> -->
+    ></v-text-field>-->
     <!-- -------------------------------- -->
 
 
@@ -173,12 +173,8 @@
       }
     },
     components: {
-      'field-add-task': FieldAddTask
+      'field-add-task': require('@/components/Todo/FieldAddTask.vue').default
     }
-
-    // components: {
-    //   HelloWorld,
-    // },コンポーネントの読み込みも可能
   }
 </script>
 

@@ -50,13 +50,21 @@
 
       <v-toolbar-title>{{ mainTitle }}</v-toolbar-title>
     </v-app-bar> -->
-    <v-app-bar
+    <!-- v-app-barは背景画像用ではなく単一またはグラデーションを指定するためのコンポーネントなので、背景画像にしたいときはv-imgを利用すること -->
+    <!-- <v-app-bar
       app
       color="primary"
       dark
       src="sea.jpg"
       prominent
       
+    > ではなく-->
+    <v-app-bar
+      app
+      color="primary"
+      src="sea.jpg"
+      dark
+      prominent
     >
       <template v-slot:img="{ props }">
         <v-img
